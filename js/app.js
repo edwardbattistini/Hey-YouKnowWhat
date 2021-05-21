@@ -38,24 +38,23 @@ function accountForFirefox(click) {
     document.body.removeChild(link);
 }
 
-checkbox.addEventListener('change', function checkShowTitle() {
-    if (this.checked) {
-        console.log("Title is ON");
-        title.style.display = 'block';
-    } else {
-        console.log("Title is OFF");
-        title.style.display = 'none';
-    }
-});
+// checkbox.addEventListener('change', function checkShowTitle() {
+//     if (this.checked) {
+//         console.log("Title is ON");
+//         title.style.display = 'block';
+//     } else {
+//         console.log("Title is OFF");
+//         title.style.display = 'none';
+//     }
+// });
 
 const setBg = () => {
-    const bg = document.getElementById("content")
-    const content = bg
 
     const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    const bg = document.getElementById("content")
+
 
     bg.style.backgroundColor = "#" + randomColor;
-    content.style.backgroundColor = "#" + randomColor;
     color.innerHTML = "#" + randomColor;
 }
 

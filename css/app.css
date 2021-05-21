@@ -5,6 +5,9 @@
 
 body {
     font-family: sans-serif;
+    position: fixed;
+    right: 0;
+    left: 0;
 }
 
 .container {
@@ -45,14 +48,14 @@ body {
 }
 
 #inputTitle {
-    font-size: 24px;
+    font-size: 40px;
     font-weight: bold;
-    margin-bottom: 8px;
-    display: none;
+    padding: 16px 0px;
 }
 
 #inputText {
-    font-size: 16px;
+    font-size: 32px;
+    padding: 16px 0px;
 }
 
 .content {
@@ -64,32 +67,45 @@ body {
     -webkit-nbsp-mode: space;
 }
 
-#toolbox {
+.toolbox {
     z-index: 16;
     position: fixed;
     bottom: 16px;
     right: 16px;
-    background: rgba(0, 0, 0, 0.05);
     display: flex-row;
     align-items: flex-end;
+    justify-content: baseline;
     padding: 16px;
     border-radius: 16px;
-    min-width: 320px;
-    max-width: 680px;
 }
 
-.button-download {
-    background: white;
+.button-1 {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+    border-radius: 200px;
     border-width: 0px;
-    color: black;
-    padding: 12px 16px;
-    border-radius: 8px;
+    margin-left: 16px;
+    padding: 12px;
+    cursor: pointer;
 }
 
-.button-random {
-    background: white;
+.button-1:hover {
+    transform: scale(1.1);
+}
+
+
+/* .button-2 {
+    background: none;
     border-width: 0px;
-    color: black;
-    padding: 12px 16px;
-    border-radius: 8px;
+} */
+
+.menu-1 {
+    display: block;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+    border-radius: 200px;
+    border-width: 0px;
+    padding: 12px;
+}
+
+.hidden {
+    display: none;
 }
