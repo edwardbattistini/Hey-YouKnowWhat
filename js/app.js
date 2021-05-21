@@ -10,7 +10,7 @@ function setUpDownloadPageAsImage() {
         .addEventListener("click", function() {
             html2canvas(document.getElementById("content")).then(function(canvas) {
                 console.log(canvas);
-                simulateDownloadImageClick(canvas.toDataURL(), "file-name.png");
+                simulateDownloadImageClick(canvas.toDataURL(), "hey-card.jpg");
             });
         });
 }
