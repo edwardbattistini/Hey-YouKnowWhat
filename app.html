@@ -2,100 +2,22 @@
 <html lang="en-US">
 	<head>
 		<meta charset="utf-8" />
-		<script
-			src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"
-			defer
-		></script>
-		<style>
-			.container {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				position: fixed;
-				font-size: 32px;
-				left: 0;
-				right: 0;
-				top: 0;
-				bottom: 0;
-				background: red;
-				vertical-align: middle;
-				text-align: center;
-			}
-			.content {
-				font-size: 32px;
-				color: white;
-				width: 100%;
-				padding: 2em;
-				word-wrap: break-word;
-				-webkit-nbsp-mode: space;
-				line-break: after-white-space;
-				outline-color: none;
-				outline-style: none;
-				outline-width: 0px;
-			}
-
-			.button-fly {
-				position: fixed;
-				bottom: 24px;
-				background: indigo;
-				color: white;
-				padding: 16px;
-			}
-			.bottom-container {
-			}
-		</style>
+		<title>Hey, you know what?</title>
+		<link rel="stylesheet" type="text/css" href="/css/app.css" />
+		<script src="/js/app.js" defer></script>
+		<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 	</head>
 	<body>
-		<div class="container">
-			<div class="content" id="content" contenteditable="true"></div>
+		<div class="container colourFrame" id="content">
+			<!-- <div id="colourFrame"></div> -->
+			<div id="textFrame">
+				<div id="inputTitle" contenteditable="true">Hello</div>
+				<div id="inputText" contenteditable="true">Some text</div>
+			</div>
 		</div>
-
-		<div>
+		<div id="toolbox">
 			<button class="button-fly" id="download-page-as-image">Download</button>
 		</div>
-
-		<script>
-			// html2canvas <- https://html2canvas.hertzen.com/dist/html2canvas.min.js
-
-			// code reference: https://stackoverflow.com/questions/31656689/how-to-save-img-to-users-local-computer-using-html2canvas
-
-			setUpDownloadPageAsImage();
-
-			function setUpDownloadPageAsImage() {
-				document
-					.getElementById("download-page-as-image")
-					.addEventListener("click", function () {
-						html2canvas(document.getElementById("content")).then(function (
-							canvas
-						) {
-							console.log(canvas);
-							simulateDownloadImageClick(canvas.toDataURL(), "file-name.png");
-						});
-					});
-			}
-
-			function simulateDownloadImageClick(uri, filename) {
-				var link = document.createElement("a");
-				if (typeof link.download !== "string") {
-					window.open(uri);
-				} else {
-					link.href = uri;
-					link.download = filename;
-					accountForFirefox(clickLink, link);
-				}
-			}
-
-			function clickLink(link) {
-				link.click();
-			}
-
-			function accountForFirefox(click) {
-				// wrapper function
-				let link = arguments[1];
-				document.body.appendChild(link);
-				click(link);
-				document.body.removeChild(link);
-			}
-		</script>
+		<script></script>
 	</body>
 </html>
