@@ -1,55 +1,49 @@
+var title = document.getElementById("inputTitle");
+var checkbox = document.querySelector("input[name=title]");
+
+
 setUpDownloadPageAsImage();
 
 function setUpDownloadPageAsImage() {
-	document
-		.getElementById("download-page-as-image")
-		.addEventListener("click", function () {
-			html2canvas(document.getElementById("content")).then(function (canvas) {
-				console.log(canvas);
-				simulateDownloadImageClick(canvas.toDataURL(), "file-name.png");
-			});
-		});
+    document
+        .getElementById("download-page-as-image")
+        .addEventListener("click", function() {
+            html2canvas(document.getElementById("content")).then(function(canvas) {
+                console.log(canvas);
+                simulateDownloadImageClick(canvas.toDataURL(), "file-name.png");
+            });
+        });
 }
 
 function simulateDownloadImageClick(uri, filename) {
-	var link = document.createElement("a");
-	if (typeof link.download !== "string") {
-		window.open(uri);
-	} else {
-		link.href = uri;
-		link.download = filename;
-		accountForFirefox(clickLink, link);
-	}
+    var link = document.createElement("a");
+    if (typeof link.download !== "string") {
+        window.open(uri);
+    } else {
+        link.href = uri;
+        link.download = filename;
+        accountForFirefox(clickLink, link);
+    }
 }
 
 function clickLink(link) {
-	link.click();
+    link.click();
 }
 
 function accountForFirefox(click) {
-	// wrapper function
-	let link = arguments[1];
-	document.body.appendChild(link);
-	click(link);
-	document.body.removeChild(link);
+    // wrapper function
+    let link = arguments[1];
+    document.body.appendChild(link);
+    click(link);
+    document.body.removeChild(link);
 }
-// 
-// function checkShowTitle() {
-// 
-//       // Get the checkbox
-//       var checkBox = document.getElementById("showTitle");
-//       // Get the output text
-//       var text = document.getElementById("inputTitle");
-//     
-//     
-//         
-//       // If the checkbox is checked, display the output text
-//       if (checkBox.checked == true){
-//             text.style.display == "block";
-//       } else if (checkBox.checked == false) {
-//           text.style.display == "none"
-//       } else {
-//         text.style.display = "none";
-//       }
-//       
-//     }
+
+checkbox.addEventListener('change', function checkShowTitle() {
+    if (this.checked) {
+        console.log("Title is ON");
+        title.style.display = 'block';
+    } else {
+        console.log("Title is OFF");
+        title.style.display = 'none';
+    }
+});
