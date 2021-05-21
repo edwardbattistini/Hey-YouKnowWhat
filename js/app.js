@@ -1,7 +1,3 @@
-// html2canvas <- https://html2canvas.hertzen.com/dist/html2canvas.min.js
-
-// code reference: https://stackoverflow.com/questions/31656689/how-to-save-img-to-users-local-computer-using-html2canvas
-
 setUpDownloadPageAsImage();
 
 function setUpDownloadPageAsImage() {
