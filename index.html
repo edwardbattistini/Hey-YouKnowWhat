@@ -7,19 +7,22 @@
     <link rel="stylesheet" type="text/css" href="css/app.css" />
     <script src="js/app.js" defer></script>
     <script src="js/html2canvas.min.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 
 <body class="colourFrame">
-    <div class="container colourFrame" id="content">
+    <div class="container" id="content">
         <div class="textFrame">
             <div class="title" id="inputTitle" contenteditable="true">Hello</div>
             <div class="text" id="inputText" contenteditable="true">Some text</div>
         </div>
     </div>
     <div id="toolbox">
-        <button class="button-download" id="download-page-as-image">Download</button>
         <input type="checkbox" id="showTitle" name=title />
         <label for="trigger">Title</label>
+        <button class="button-random" id="randomColour">Colour</button>
+        <button class="button-download" id="download-page-as-image">Download</button>
     </div>
 </body>
 

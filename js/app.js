@@ -47,3 +47,17 @@ checkbox.addEventListener('change', function checkShowTitle() {
         title.style.display = 'none';
     }
 });
+
+const setBg = () => {
+    const bg = document.getElementById("content")
+    const content = bg
+
+    const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+
+    bg.style.backgroundColor = "#" + randomColor;
+    content.style.backgroundColor = "#" + randomColor;
+    color.innerHTML = "#" + randomColor;
+}
+
+randomColour.addEventListener("click", setBg);
+setBg();
