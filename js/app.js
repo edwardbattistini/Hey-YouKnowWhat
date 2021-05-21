@@ -33,3 +33,23 @@ function accountForFirefox(click) {
 	click(link);
 	document.body.removeChild(link);
 }
+// 
+// function checkShowTitle() {
+// 
+//       // Get the checkbox
+//       var checkBox = document.getElementById("showTitle");
+//       // Get the output text
+//       var text = document.getElementById("inputTitle");
+//     
+//     
+//         
+//       // If the checkbox is checked, display the output text
+//       if (checkBox.checked == true){
+//             text.style.display == "block";
+//       } else if (checkBox.checked == false) {
+//           text.style.display == "none"
+//       } else {
+//         text.style.display = "none";
+//       }
+//       
+//     }

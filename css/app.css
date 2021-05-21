@@ -8,13 +8,14 @@
 	align-items: center;
 	padding: 0;
 	margin: auto;
+	min-height: 512px;
 }
 
 .colourFrame {
 	background: red;
 }
 
-#textFrame {
+.textFrame {
 	z-index: 8;
 	padding: 24px;
 	width: 100%;
@@ -28,7 +29,8 @@
 #inputTitle,
 #inputText {
 	text-align: center;
-	padding: 4px;
+	padding-top: 4px;
+	padding-bottom: 4px;
 	border-radius: 8px;
 	width: 100%;
 }
@@ -37,12 +39,15 @@
 #inputText:hover,
 #inputTitle:active,
 #inputText:active {
-	background-color: grey;
+	background-color: rgba(0, 0, 0, 0.05);
+	outline-color: rgba(0, 0, 0, 0.2);
+	-webkit-focus-ring-color: rgba(0, 0, 0, 0.2);
 }
 
 #inputTitle {
 	font-size: 20px;
 	margin-bottom: 8px;
+	
 }
 
 #inputText {
@@ -58,13 +63,21 @@
 	-webkit-nbsp-mode: space;
 }
 
+/* #trigger:checked + #inputTitle {
+	display: none;
+}
+
+#trigger: {
+	display: block;
+} */
+
 #toolbox {
 	z-index: 16;
 	position: fixed;
 	bottom: 16px;
 	left: 16px;
 	right: 16px;
-	background: black;
+	background: rgba(0, 0, 0, 0.05);
 	padding: 16px;
 	border-radius: 16px;
 	max-width: 680px;

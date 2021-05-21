@@ -3,21 +3,27 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>Hey, you know what?</title>
-		<link rel="stylesheet" type="text/css" href="/css/app.css" />
-		<script src="/js/app.js" defer></script>
-		<script src="/js/html2canvas.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<script src="js/app.js" defer></script>
+		<script src="js/html2canvas.min.js" defer></script>
+		<style>
+			#trigger:checked + .title {
+				display: none;
+			}
+		</style>
 	</head>
-	<body>
+	<body class="colourFrame">
 		<div class="container colourFrame" id="content">
 			<!-- <div id="colourFrame"></div> -->
-			<div id="textFrame">
-				<div id="inputTitle" contenteditable="true">Hello</div>
+			<div class="textFrame">
+				<div class="title" id="inputTitle" contenteditable="true">Hello</div>
 				<div id="inputText" contenteditable="true">Some text</div>
 			</div>
 		</div>
-		<div id="toolbox">
-			<button class="button-fly" id="download-page-as-image">Download</button>
-		</div>
-		<script></script>
+        <div id="toolbox">
+            <label for="trigger">Hide Title</label>
+            <button class="button-fly" id="download-page-as-image">Download</button>
+            <input type="checkbox" id="showTitle" onclick="checkShowTitle()" />
+        </div>
 	</body>
 </html>
