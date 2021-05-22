@@ -89,6 +89,7 @@ body {
 
 button {
     font-size: 1em;
+    z-index: 80;
     font-weight: bold;
     line-height: 1em;
     text-transform: uppercase;
@@ -98,11 +99,13 @@ button {
     padding: 20px;
     margin-right: 8px;
     color: black;
-    background-color: rgba(0, 0, 0, 0.2);
     border-radius: 200px;
     transition: transform .3s;
     transition: background-color .25s;
     cursor: pointer;
+    background: rgba(196, 196, 196, 0.1);
+    backdrop-filter: blur(100px);
+    -webkit-backdrop-filter: blur(16px);
 }
 
 button:hover,

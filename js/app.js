@@ -45,6 +45,7 @@ const setBg = () => {
     const bg = document.getElementById("content")
 
     bg.style.backgroundColor = "#" + randomColor;
+    body.style.backgroundColor = "#" + randomColor;
 
 }
 
