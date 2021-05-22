@@ -1,6 +1,22 @@
 var title = document.getElementById("inputTitle");
 var checkbox = document.querySelector("input[name=title]");
-var fontTypes = ["Comic Sans", "Helvetica", "Courier", "Impact"];
+var fontTypes = ["Comic Sans", "Helvetica", "Courier", "Impact", "Papyrus", "Lily Script One"];
+Verdana
+Tahoma
+Trebuchet MS
+Impact
+Times New Roman
+Didot
+Georgia
+American Typewriter
+Andalé Mono
+Courier
+Lucida Console(monospace)
+Monaco(monospace)
+Bradley Hand(cursive)
+Brush Script MT(cursive)
+Luminari(fantasy)
+Comic Sans MS(cursive)
 var fontSizes = ["24px", "32px", "48px", "56px", "64px", "72px", ]
 
 setUpDownloadPageAsImage();
