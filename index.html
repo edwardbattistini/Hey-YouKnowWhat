@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en-US">
 
-<head>
+<head title="Hey You know what app">
     <meta charset="utf-8" />
     <title>Hey, you know what?</title>
     <link rel="stylesheet" type="text/css" href="css/app.css" />
 
     <script src="js/app.js" defer></script>
     <script src="js/html2canvas.min.js" defer></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" user-scalable=yes>
     <!-- Primary Meta Tags -->
     <title>Hey, you know what?</title>
     <meta name="title" content="Hey, you know what?">
@@ -33,20 +33,29 @@
 <body>
     <div class="container" id="content">
         <div class="textFrame">
-            <div class="title" id="inputTitle" contenteditable="true" placeholder="Enter text here..."></div>
+            <div class="title mt-4" id="inputTitle" contenteditable="true" placeholder="Enter text here..."></div>
             <div class="text" id="inputText" contenteditable="true" placeholder="This is where you add your text..."></div>
         </div>
     </div>
-    <div class="toolbox">
+
+    <div class="toolbox" id="toolbox">
+        <button aria-label="Randomise Font size" type="button" id="randomSize" onclick="randomFontSize(event)">
+			<img alt="font size icon" src="img/fontSize.svg" class="svg-icon">
+
+		</button>
         <button type="button" id="randomText" onclick="randomFont(event)">
-			<img src="img/title.svg" class="svg-icon" >
+			<img alt="title icon" src="img/title.svg" class="svg-icon">
 
 		</button>
         <button type="button" id="randomColour">
-			<img src="img/dice.svg"  class="svg-icon" >
+			<img alt="dice icon" src="img/dice.svg" class="svg-icon">
 		</button>
-        <button class="btn hidden" id="menu"><img src="img/settings.svg" class="icons"></button>
-        <button class="btn" id="download-page-as-image"><img src="img/download.svg" class="icons"></button>
+
+
+        <button aria-label="setting button" class="btn hidden" id="menu"><img alt="setting icon" src="img/settings.svg"
+				class="icons"></button>
+        <button aria-label="download image button" class="btn" id="download-page-as-image"><img alt="download icon"
+				src="img/download.svg" class="svg-icon"></button>
     </div>
 </body>
 

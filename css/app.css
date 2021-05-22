@@ -76,7 +76,7 @@ body {
     position: fixed;
     bottom: 16px;
     right: 16px;
-    display: flex-row;
+    display: flex;
     align-items: flex-end;
     justify-content: baseline;
     padding: 16px;
@@ -96,25 +96,30 @@ button {
     border: none;
     vertical-align: middle;
     padding: 20px;
+    margin-right: 8px;
     color: black;
-    background: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.2);
     border-radius: 200px;
     transition: transform .3s;
+    transition: background-color .25s;
     cursor: pointer;
 }
 
 button:hover,
 button:focus {
     transform: scale(1.1);
-    background: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 2px 8px -3px rgba(0, 0, 0, 0.25);
 }
 
 &:active {
     transform: scale(0.9);
 }
 
-
+.mt-4 {
+    margin-top: -32px;
 }
+
 .menu-1 {
     display: block;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
@@ -122,9 +127,11 @@ button:focus {
     border-width: 0px;
     padding: 12px;
 }
+
 .hidden {
     display: none;
 }
+
 [contenteditable=true]:empty:before {
     content: attr(placeholder);
     opacity: 0.5;
@@ -132,24 +139,21 @@ button:focus {
     text-align: center;
     /* For Firefox */
 }
+
 .svg-icon {
     /* Place the icon on the text baseline. */
-    
     position: relative;
     vertical-align: middle;
     height: 32px;
     width: 32px;
     /* Prevent the icon from shrinking inside a flex container. */
-    
     flex-shrink: 0;
     /* Scale the icon to match the font-size of the parent element. */
     /* Let the icon take whatever color the parent has. */
-    
     fill: currentColor;
     /*
      * If the icon is used on a link, which has a color transition,
      * we can also use a transition on the fill value.
     */
-    
     transition: fill .3s;
 }

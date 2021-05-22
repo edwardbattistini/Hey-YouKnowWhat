@@ -1,6 +1,7 @@
 var title = document.getElementById("inputTitle");
 var checkbox = document.querySelector("input[name=title]");
-var fontType = ["Comic Sans", "Helvetica", "Courier", "Impact"];
+var fontTypes = ["Comic Sans", "Helvetica", "Courier", "Impact"];
+var fontSizes = ["24px", "32px", "48px", "56px", "64px", "72px", ]
 
 setUpDownloadPageAsImage();
 
@@ -38,24 +39,13 @@ function accountForFirefox(click) {
     document.body.removeChild(link);
 }
 
-// checkbox.addEventListener('change', function checkShowTitle() {
-//     if (this.checked) {
-//         console.log("Title is ON");
-//         title.style.display = 'block';
-//     } else {
-//         console.log("Title is OFF");
-//         title.style.display = 'none';
-//     }
-// });
-
 const setBg = () => {
 
     const randomColor = Math.floor(Math.random() * 16777215).toString(16);
     const bg = document.getElementById("content")
 
-
     bg.style.backgroundColor = "#" + randomColor;
-    color.innerHTML = "#" + randomColor;
+
 }
 
 randomColour.addEventListener("click", setBg);
@@ -64,8 +54,16 @@ setBg();
 
 function randomFont(e) {
 
-    var selectedFont = fontType[Math.floor(Math.random() * fontType.length)];
+    var selectedFont = fontTypes[Math.floor(Math.random() * fontTypes.length)];
 
     document.getElementById("inputTitle").style.fontFamily = selectedFont;
     document.getElementById("inputText").style.fontFamily = selectedFont;
+}
+
+
+function randomFontSize(e) {
+    var randomSize = fontSizes[Math.floor(Math.random() * fontSizes.length)];
+
+    document.getElementById("inputTitle").style.fontSize = randomSize;
+    document.getElementById("inputText").style.fontSize = randomSize;
 }
