@@ -1,6 +1,6 @@
 var title = document.getElementById("inputTitle");
 var checkbox = document.querySelector("input[name=title]");
-
+var fontType = ["Comic Sans", "Helvetica", "Courier", "Impact"];
 
 setUpDownloadPageAsImage();
 
@@ -60,3 +60,12 @@ const setBg = () => {
 
 randomColour.addEventListener("click", setBg);
 setBg();
+
+
+function randomFont(e) {
+
+    var selectedFont = fontType[Math.floor(Math.random() * fontType.length)];
+
+    document.getElementById("inputTitle").style.fontFamily = selectedFont;
+    document.getElementById("inputText").style.fontFamily = selectedFont;
+}
