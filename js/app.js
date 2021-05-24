@@ -7,7 +7,7 @@ var setBgColor = document.getElementById("randomColour")
 const heightOutput = document.querySelector('#height');
 const widthOutput = document.querySelector('#width');
 
-setUpDownloadPageAsImage();
+
 
 function setUpDownloadPageAsImage() {
     document
@@ -19,6 +19,8 @@ function setUpDownloadPageAsImage() {
             });
         });
 }
+
+
 
 function simulateDownloadImageClick(uri, filename) {
     var link = document.createElement("a");
@@ -55,8 +57,6 @@ const setBg = () => {
 
 }
 
-setBgColor.addEventListener("click", setBg);
-
 
 function randomFont(e) {
 
@@ -86,6 +86,9 @@ function reportWindowSize() {
     console.log("Window is resized event")
 
 }
+setUpDownloadPageAsImage();
+setBg();
+setBgColor.addEventListener("click", setBg);
 
 window.onload = setBg();
 window.onload = reportWindowSize();
