@@ -3,6 +3,9 @@ var checkbox = document.querySelector("input[name=title]");
 var fontTypes = ["Comic Sans", "Helvetica", "Courier", "Impact", "Papyrus", "Lily Script One", "Verdana", "Tahoma", "Trebuchet MS", "Impact", "Times New Roman", "Didot", "Georgia", "American Typewriter", "Andalé Mono", "Courier", "Lucida Console", "Monaco", "Bradley Hand", "Brush Script MT", "Luminari", "Comic Sans MS", ];
 var fontSizes = ["24px", "32px", "48px", "56px", "64px", "72px", ]
 
+const heightOutput = document.querySelector('#height');
+const widthOutput = document.querySelector('#width');
+
 setUpDownloadPageAsImage();
 
 function setUpDownloadPageAsImage() {
@@ -45,12 +48,11 @@ const setBg = () => {
     const bg = document.getElementById("content")
 
     bg.style.backgroundColor = "#" + randomColor;
-    body.style.backgroundColor = "#" + randomColor;
+    document.body.style.backgroundColor = "#" + randomColor;
 
 }
 
 randomColour.addEventListener("click", setBg);
-setBg();
 
 
 function randomFont(e) {
@@ -68,3 +70,12 @@ function randomFontSize(e) {
     document.getElementById("inputTitle").style.fontSize = randomSize;
     document.getElementById("inputText").style.fontSize = randomSize;
 }
+
+function reportWindowSize() {
+    heightOutput.textContent = window.innerHeight * 2;
+    widthOutput.textContent = window.innerWidth * 2;
+}
+
+window.onload = setBg;
+window.onload = reportWindowSize;
+window.onresize = reportWindowSize;

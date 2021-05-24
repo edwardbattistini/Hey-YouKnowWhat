@@ -8,6 +8,7 @@ body {
     position: fixed;
     right: 0;
     left: 0;
+    background-color: aqua;
 }
 
 .container {
@@ -77,14 +78,20 @@ body {
     bottom: 16px;
     right: 16px;
     display: flex;
-    align-items: flex-end;
-    justify-content: baseline;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
     padding: 16px;
     border-radius: 16px;
 }
 
 .labelBtn {
     padding: 16px 0px;
+}
+
+.info {
+    font-size: .75em;
+    margin-right: 8px;
 }
 
 button {
