@@ -2,6 +2,7 @@ var title = document.getElementById("inputTitle");
 var checkbox = document.querySelector("input[name=title]");
 var fontTypes = ["Comic Sans", "Helvetica", "Courier", "Impact", "Papyrus", "Lily Script One", "Verdana", "Tahoma", "Trebuchet MS", "Impact", "Times New Roman", "Didot", "Georgia", "American Typewriter", "Andalé Mono", "Courier", "Lucida Console", "Monaco", "Bradley Hand", "Brush Script MT", "Luminari", "Comic Sans MS", ];
 var fontSizes = ["24px", "32px", "48px", "56px", "64px", "72px", ]
+var setBgColor = document.getElementById("randomColour")
 
 const heightOutput = document.querySelector('#height');
 const widthOutput = document.querySelector('#width');
@@ -49,10 +50,12 @@ const setBg = () => {
 
     bg.style.backgroundColor = "#" + randomColor;
     document.body.style.backgroundColor = "#" + randomColor;
+    //debug
+    console.log("Randomise Bg colour event")
 
 }
 
-randomColour.addEventListener("click", setBg);
+setBgColor.addEventListener("click", setBg);
 
 
 function randomFont(e) {
@@ -61,6 +64,9 @@ function randomFont(e) {
 
     document.getElementById("inputTitle").style.fontFamily = selectedFont;
     document.getElementById("inputText").style.fontFamily = selectedFont;
+
+    //debug
+    console.log("Randomise Font event")
 }
 
 
@@ -69,13 +75,18 @@ function randomFontSize(e) {
 
     document.getElementById("inputTitle").style.fontSize = randomSize;
     document.getElementById("inputText").style.fontSize = randomSize;
+    //debug
+    console.log("Randomise Font Size event")
 }
 
 function reportWindowSize() {
     heightOutput.textContent = window.innerHeight * 2;
     widthOutput.textContent = window.innerWidth * 2;
+
+    console.log("Window is resized event")
+
 }
 
-window.onload = setBg;
-window.onload = reportWindowSize;
-window.onresize = reportWindowSize;
+window.onload = setBg();
+window.onload = reportWindowSize();
+window.onresize = reportWindowSize();
