@@ -1,7 +1,7 @@
 var title = document.getElementById("inputTitle");
 var checkbox = document.querySelector("input[name=title]");
-var fontTypes = ["Comic Sans", "Helvetica", "Courier", "Impact", "Papyrus", "Lily Script One", "Verdana", "Tahoma", "Trebuchet MS", "Impact", "Times New Roman", "Didot", "Georgia", "American Typewriter", "Andalé Mono", "Courier", "Lucida Console", "Monaco", "Bradley Hand", "Brush Script MT", "Luminari", "Comic Sans MS", ];
-var fontSizes = ["24px", "32px", "48px", "56px", "64px", "72px", ]
+var fontTypes = ["Comic Sans", "Helvetica", "Courier", "Impact", "Papyrus", "Lily Script One", "Verdana", "Tahoma", "Trebuchet MS", "Impact", "Times New Roman", "Didot", "Georgia", "American Typewriter", "Andalé Mono", "Courier", "Lucida Console", "Monaco", "Bradley Hand", "Brush Script MT", "Luminari", "Comic Sans MS",];
+var fontSizes = ["24px", "32px", "48px", "56px", "64px", "72px",]
 var setBgColor = document.getElementById("randomColour")
 
 const heightOutput = document.querySelector('#height');
@@ -12,8 +12,8 @@ const widthOutput = document.querySelector('#width');
 function setUpDownloadPageAsImage() {
     document
         .getElementById("download-page-as-image")
-        .addEventListener("click", function() {
-            html2canvas(document.getElementById("content")).then(function(canvas) {
+        .addEventListener("click", function () {
+            html2canvas(document.getElementById("content")).then(function (canvas) {
                 console.log(canvas);
                 simulateDownloadImageClick(canvas.toDataURL(), "hey-card.png");
             });
@@ -92,4 +92,5 @@ setBgColor.addEventListener("click", setBg);
 
 window.onload = setBg();
 window.onload = reportWindowSize();
-window.onresize = reportWindowSize();
+
+window.addEventListener("resize", reportWindowSize)
