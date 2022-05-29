@@ -1,78 +1,86 @@
 <!DOCTYPE html>
 <html lang="en-US">
 
-<head title="Hey You know what app">
-    <meta charset="utf-8" />
-    <title>Hey, you know what?</title>
-    <link rel="stylesheet" type="text/css" href="css/app.css" />
+    <head title="Hey You know what app">
+        <meta charset="utf-8"/>
+        <title>Hey, you know what?</title>
+        <link rel="stylesheet" type="text/css" href="css/app.css"/>
 
-    <script src="js/app.js" defer></script>
-    <script src="js/html2canvas.min.js" defer></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1" user-scalable=yes>
-    <!-- Primary Meta Tags -->
-    <title>Hey, you know what?</title>
-    <meta name="title" content="Hey, you know what?">
-    <meta name="description" content="The simplest tool to create fact cards in seconds.">
+        <script src="js/app.js" defer></script>
+        <script src="js/html2canvas.min.js" defer></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1" user-scalable=yes>
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hey.edwardbattistini.com/">
-    <meta property="og:title" content="Hey, you know what?">
-    <meta property="og:description" content="The simplest tool to create fact cards in seconds.">
-    <meta property="og:image" content="img/preview.jpg">
+        <!-- Primary Meta Tags -->
+        <title>Hey, you know what?</title>
+        <meta name="title" content="Hey, you know what?">
+        <meta name="description" content="The simplest tool to create fact cards in seconds.">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://hey.edwardbattistini.com/">
-    <meta property="twitter:title" content="Hey, you know what?">
-    <meta property="twitter:description" content="The simplest tool to create fact cards in seconds.">
-    <meta property="twitter:image" content="img/preview.jpg">
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://hey.edwardbattistini.com/">
+        <meta property="og:title" content="Hey, you know what?">
+        <meta property="og:description" content="The simplest tool to create fact cards in seconds.">
+        <meta property="og:image" content="img/preview.jpg">
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D3RWBX08BR"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://hey.edwardbattistini.com/">
+        <meta property="twitter:title" content="Hey, you know what?">
+        <meta property="twitter:description" content="The simplest tool to create fact cards in seconds.">
+        <meta property="twitter:image" content="img/preview.jpg">
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-D3RWBX08BR"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
 
-        gtag('config', 'G-D3RWBX08BR');
-    </script>
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
 
-</head>
+            gtag('config', 'G-D3RWBX08BR');
+        </script>
 
-<body>
-    <div class="container" id="content">
-        <div class="textFrame">
-            <div class="title mt-4" id="inputTitle" contenteditable="true" placeholder="Enter text here..."></div>
-            <div class="text" id="inputText" contenteditable="true" placeholder="This is where you add your text..."></div>
+    </head>
+
+    <body>
+        <div class="container" id="content">
+            <div class="textFrame">
+                <div class="mt-4 title" id="inputTitle" contenteditable="true" placeholder="Enter text here..."></div>
+                <div class="text" id="inputText" contenteditable="true" placeholder="This is where you add your text..."></div>
+            </div>
         </div>
-    </div>
 
-    <div class="toolbox" id="toolbox">
-        <p class="info">Output: <span id="height"></span> x <span id="width"></span>px</p>
+        <div class="bottom-view ">
+            <div class="commands">
+                <div class="controls" id="toolbox">
+                    <button title="Randomise size" aria-label="Randomise Font size" type="button" id="randomSize" onclick="randomFontSize(event)">
+                        <img alt="font size icon" src="img/minus2.svg" class="svg-icon">
+                    </button>
+                    <button title="Randomise Colour" aria-label="Randomise Colour" type="button" id="randomColour" class="aborder" >
+                        <img alt="font size icon" src="img/colours2.svg" class="svg-icon ">
+                    </button>
+                    <button title="Randomise font" aria-label="Randomise Font family" type="button" id="randomFont"  onclick="randomFont(event)">
+                        <img alt="font size icon" src="img/font2.svg" class="svg-icon">
+                    </button>
+                    <div class="sep"></div>
 
-        <button title="Randomise size" aria-label="Randomise Font size" type="button" id="randomSize" onclick="randomFontSize(event)">
-			<img alt="font size icon" src="img/fontSize.svg" class="svg-icon">
+                    <button title="Download" aria-label="download image" type="button" id="download-page-as-image">
+                        <img alt="font size icon" src="img/download2.svg" class="svg-icon">
+                    </button>
 
-		</button>
-        <button title="Randomise font" type="button" id="randomText" onclick="randomFont(event)">
-			<img alt="title icon" src="img/title.svg" class="svg-icon">
+                </div>
+                <div class="info" >
+                    <p>Output:
+                        <span id="height"></span>
+                        x
+                        <span id="width"></span>px</p>
+                </div>
+            </div>
 
-		</button>
-        <button title="Randomise colour" type="button" id="randomColour">
-			<img alt="dice icon" src="img/color.svg" class="svg-icon">
-		</button>
+        </div>
 
-
-        <button aria-label="setting button" class="btn hidden" id="menu"><img alt="setting icon" src="img/settings.svg"
-				class="icons"></button>
-
-        <button title="Download PNG" aria-label="download image button" class="btn" id="download-page-as-image">Download<img alt="download icon"
-				src="img/download.svg" class="svg-icon" style="margin-left: 1em;"></button>
-    </div>
-</body>
+    </body>
 
 </html>
